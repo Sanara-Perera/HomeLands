@@ -94,8 +94,17 @@ function SearchPage({
       
       <header className="search-header">
         <div className="header-content">
-          <h1 className="site-title">PrimeHomes</h1>
-          <p className="site-tagline">Find Your Perfect Property</p>
+          <div className="logo-container">
+            <img 
+              src="/logoImage.png" 
+              alt="PrimeHomes Logo" 
+              className="site-logo"
+            />
+            <div>
+              <h1 className="site-title">PrimeHomes</h1>
+              <p className="site-tagline">Find Your Perfect Property</p>
+            </div>
+          </div>
         </div>
       </header>
 
