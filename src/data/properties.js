@@ -3,7 +3,7 @@ export const propertiesData = [
   {
     id: 1,
     type: 'house',
-    price: 85000000, // LKR 85 Million
+    price: 85000000, 
     bedrooms: 3,
     dateAdded: '2024-11-15',
     postcode: '11222',
@@ -25,7 +25,7 @@ export const propertiesData = [
   {
     id: 2,
     type: 'flat',
-    price: 55000000, // LKR 55 Million
+    price: 55000000, 
     bedrooms: 2,
     dateAdded: '2024-12-01',
     postcode: '00300',
@@ -46,7 +46,7 @@ export const propertiesData = [
   {
     id: 3,
     type: 'house',
-    price: 145000000, // LKR 145 Million
+    price: 145000000, 
     bedrooms: 5,
     dateAdded: '2024-10-20',
     postcode: '10120',
@@ -68,7 +68,7 @@ export const propertiesData = [
   {
     id: 4,
     type: 'flat',
-    price: 38000000, // LKR 38 Million
+    price: 38000000, 
     bedrooms: 1,
     dateAdded: '2024-12-10',
     postcode: '00800',
@@ -90,7 +90,7 @@ export const propertiesData = [
   {
     id: 5,
     type: 'house',
-    price: 110000000, // LKR 110 Million
+    price: 110000000, 
     bedrooms: 4,
     dateAdded: '2024-11-28',
     postcode: '10230',
@@ -111,7 +111,7 @@ export const propertiesData = [
   {
     id: 6,
     type: 'flat',
-    price: 72000000, // LKR 72 Million
+    price: 72000000, 
     bedrooms: 3,
     dateAdded: '2024-11-05',
     postcode: '00400',
@@ -132,7 +132,7 @@ export const propertiesData = [
   {
     id: 7,
     type: 'house',
-    price: 250000000, // LKR 250 Million
+    price: 250000000, 
     bedrooms: 6,
     dateAdded: '2024-09-15',
     postcode: '11222',
