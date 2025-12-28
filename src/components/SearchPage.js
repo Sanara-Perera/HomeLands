@@ -96,7 +96,7 @@ function SearchPage({
         <div className="header-content">
           <div className="logo-container">
             <img 
-              src="/{`${process.env.PUBLIC_URL}/logoImage.png`}" 
+              src="PrimeHomes/images/logoImage.png" 
               alt="PrimeHomes Logo" 
               className="site-logo"
             />
