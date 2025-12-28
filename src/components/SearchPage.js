@@ -94,7 +94,7 @@ function SearchPage({
       
       <header className="search-header">
         <div className="header-content">
-          <h1 className="site-title">HomeLands</h1>
+          <h1 className="site-title">PrimeHomes</h1>
           <p className="site-tagline">Find Your Perfect Property</p>
         </div>
       </header>
