@@ -11,16 +11,16 @@ export const propertiesData = [
     shortDesc: 'Charming 3-bed colonial house with garden',
     longDesc: 'This beautiful colonial-style house features three spacious bedrooms, a modern kitchen, and a lovely rear garden. Perfect for families looking for character and space in a prime location. The property boasts original features including high ceilings, period architecture, and large windows. The modern kitchen is fully fitted with integrated appliances. Outside, the landscaped rear garden provides a tranquil space for relaxation and entertaining.',
     images: [
-      `${process.env.PUBLIC_URL}/images/image1.jpg`,
-      `${process.env.PUBLIC_URL}/images/image2.jpg`,
-      `${process.env.PUBLIC_URL}/images/image3.jpg`,
-      `${process.env.PUBLIC_URL}/images/image4.jpg`,
-      `${process.env.PUBLIC_URL}/images/image5.jpg`,
-      `${process.env.PUBLIC_URL}/images/image6.jpg`,
-      `${process.env.PUBLIC_URL}/images/image7.jpg`,
-      `${process.env.PUBLIC_URL}/images/image8.jpg`
+      "/PrimeHomes/images/image1.jpg",
+      "/PrimeHomes/images/image2.jpg",
+      "/PrimeHomes/images/image3.jpg",
+      "/PrimeHomes/images/image4.jpg",
+      "/PrimeHomes/images/image5.jpg",
+      "/PrimeHomes/images/image6.jpg",
+      "/PrimeHomes/images/image7.jpg",
+      "/PrimeHomes/images/image8.jpg"
     ],
-    floorPlan: `${process.env.PUBLIC_URL}/images/image9.jpg`
+    floorPlan: "/PrimeHomes/images/image9.jpg"
   },
   {
     id: 2,
