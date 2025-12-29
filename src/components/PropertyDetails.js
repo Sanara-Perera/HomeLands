@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Home, Bed, MapPin, Calendar, Heart } from 'lucide-react';
 import './PropertyDetails.css';
 
-function PropertyDetails({ property, favourites, onAddToFavourites, onBack }) {
+function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -32,8 +32,8 @@ function PropertyDetails({ property, favourites, onAddToFavourites, onBack }) {
   };
 
   
-  const handleAddToFavourites = () => {
-    onAddToFavourites(property);
+  const handleFavouriteClick = () => {
+    onToggleFavourite(property);
   };
 
   return (
@@ -105,13 +105,14 @@ function PropertyDetails({ property, favourites, onAddToFavourites, onBack }) {
                 LKR{property.price.toLocaleString()}
               </h2>
               <button
-                onClick={handleAddToFavourites}
+                onClick={handleFavouriteClick}
                 className="favourite-button-large"
-                aria-label="Add to favourites"
-              >
-                <Heart
-                  className={`heart-icon-large ${isFavourited ? 'heart-filled' : ''}`}
-                />
+                title={isFavourited ? "Already in favourites" : "Add to favourites"}
+                aria-label={isFavourited ? "Already in favourites" : "Add to favourites"}
+                >
+                  <Heart
+                    className={`heart-icon-large ${isFavourited ? 'heart-icon-filled' : ''}`}
+              />
               </button>
             </div>
 
@@ -200,6 +201,7 @@ function PropertyDetails({ property, favourites, onAddToFavourites, onBack }) {
         <aside className="property-details-sidebar">
           <div className="contact-card">
             <h3 className="contact-heading">Contact Agent</h3>
+            
             <div className="contact-buttons">
               <button className="contact-button contact-button-primary">
                 Request Viewing
