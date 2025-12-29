@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Heart, Trash2, X } from 'lucide-react';
 import './FavouritesList.css';
 
 function FavouritesList({ 
-  favourites, 
-  onRemoveFromFavourites, 
+  favourites,
   onClearFavourites,
   onViewProperty,
   onDropToFavourites,
   onDropToRemove,
-  onDragStart
+  onDragStart,
+  onToggleFavourite
 }) {
 
   const handleDragOver = (e) => {
@@ -26,14 +26,18 @@ function FavouritesList({
  
   const handleDropToRemove = (e) => {
     e.preventDefault();
-    onDropToRemove();
-  };
-
+    if (draggedProperty) {
+     onToggleFavourite(draggedProperty); 
+     setDraggedProperty(null);            
+  }
+};
 
   const handleDragStart = (e, property) => {
-    onDragStart(property);
+    setDraggedProperty(property);
     e.dataTransfer.effectAllowed = 'move';
   };
+
+  const [draggedProperty, setDraggedProperty] = useState(null);
 
   return (
     <div
@@ -78,7 +82,7 @@ function FavouritesList({
               onDragStart={(e) => handleDragStart(e, property)}
             >
               <img
-                src={property.images[0]}
+                src={property.images?.[0] || '/images/placeholder.jpg'}
                 alt={property.shortDesc}
                 className="favourite-image"
               />
@@ -97,7 +101,7 @@ function FavouritesList({
                     View
                   </button>
                   <button
-                    onClick={() => onRemoveFromFavourites(property.id)}
+                    onClick={() => onToggleFavourite(property)}
                     className="favourite-remove-button"
                     title="Remove from favourites"
                     aria-label="Remove from favourites"
