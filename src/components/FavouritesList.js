@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Heart, Trash2, X } from 'lucide-react';
 import './FavouritesList.css';
 
@@ -26,18 +26,14 @@ function FavouritesList({
  
   const handleDropToRemove = (e) => {
     e.preventDefault();
-    if (draggedProperty) {
-     onToggleFavourite(draggedProperty); 
-     setDraggedProperty(null);            
-  }
-};
-
-  const handleDragStart = (e, property) => {
-    setDraggedProperty(property);
-    e.dataTransfer.effectAllowed = 'move';
+    onDropToRemove();
   };
 
-  const [draggedProperty, setDraggedProperty] = useState(null);
+
+  const handleDragStart = (e, property) => {
+    onDragStart(property);
+    e.dataTransfer.effectAllowed = 'move';
+  };
 
   return (
     <div
