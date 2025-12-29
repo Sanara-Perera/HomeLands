@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
-            <h3 className="footer-logo">HomeLands</h3>
+            <h3 className="footer-logo">PrimeHomes</h3>
             <p className="footer-tagline">Find your perfect property in Sri Lanka</p>
             <div className="footer-social">
               <a href="https://www.linkedin.com/in/sanaraperera/" target="_blank" rel="noopener noreferrer" className="social">LinkedIn</a>
@@ -16,7 +16,7 @@ export default function Footer() {
               <a href="https://www.instagram.com/_sanara_03/" target="_blank" rel="noopener noreferrer" className="social">Instagram</a>
             </div>
             <div className="footer-contact">
-              <a href="mailto:info@homelands.lk">info@homelands.lk</a>
+              <a href="mailto:info@primehomes.lk">info@primehomes.lk</a>
             </div>
           </div>
 
