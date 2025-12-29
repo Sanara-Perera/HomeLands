@@ -59,7 +59,7 @@ function SearchForm({ onSearch }) {
     <div className="search-form-container">
       <h2 className="search-form-title">
         <Search className="search-icon" aria-hidden="true" />
-        Search Properties
+        <span className="typing-text">Search Properties</span>
       </h2>
       
       <form onSubmit={handleSubmit} className="search-form" role="search">
