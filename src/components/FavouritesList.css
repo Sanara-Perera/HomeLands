@@ -1,8 +1,13 @@
 .favourites-container {
   background-color: white;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   padding: 1rem;
+}
+
+.favourites-container:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(10, 46, 57, 0.5);
 }
 
 .favourites-header {
