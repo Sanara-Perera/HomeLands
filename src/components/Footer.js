@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <div className="legal">© {year} HomeLands. All rights reserved.</div>
+          <div className="legal">© {year} PrimeHomes. All rights reserved.</div>
         </div>
       </div>
     </footer>
