@@ -37,6 +37,7 @@ function FavouritesList({
 
   return (
     <div
+      id="favourites"
       className="favourites-container"
       onDragOver={handleDragOver}
       onDrop={handleDropToFavourites}
