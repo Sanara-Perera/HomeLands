@@ -110,7 +110,7 @@ function SearchPage({
 
       
       <div className="search-container">
-        <div className="search-main">
+        <div className="search-main" id="search">
           
           <SearchForm onSearch={handleSearch} />
 
@@ -126,7 +126,7 @@ function SearchPage({
         </div>
 
         
-        <aside className="search-sidebar">
+        <aside className="search-sidebar" id="favourites">
           <FavouritesList
             favourites={favourites}
             onToggleFavourite={onToggleFavourite}
