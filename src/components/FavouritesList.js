@@ -86,7 +86,7 @@ function FavouritesList({
               
               <div className="favourite-content">
                 <p className="favourite-price">
-                  £{property.price.toLocaleString()}
+                  LKR{property.price.toLocaleString()}
                 </p>
                 <p className="favourite-desc">{property.shortDesc}</p>
                 
