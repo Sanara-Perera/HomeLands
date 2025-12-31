@@ -22,7 +22,7 @@
 ## 📸 Screenshots
 | Desktop Search | Property Details | Mobile View |
 |:---:|:---:|:---:|
-| ![Search UI](path/to/screenshot1.png) | ![Details UI](path/to/screenshot2.png) | ![Mobile UI](path/to/screenshot3.png) |
+| ![Search UI](public/images/Readme1.png) | ![Details UI](public/images/Readme2.png) | ![Mobile UI](public/images/Readme3.png) |
 
 ---
 
