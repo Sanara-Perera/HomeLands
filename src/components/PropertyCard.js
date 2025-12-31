@@ -68,6 +68,9 @@ function PropertyCard({
           loading="lazy"
         />
         
+        <div className="property-type-badge">
+          {property.type.charAt(0).toUpperCase() + property.type.slice(1)}
+        </div>
         
         <button
           onClick={handleFavouriteClick}
