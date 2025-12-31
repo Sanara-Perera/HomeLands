@@ -3,7 +3,10 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
-![Status](https://img.shields.io/badge/status-live-success?style=for-the-badge)
+![HTML5](https://img.shields.io/badge/-HTML5-%23E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+
 
 **PrimeHomes** is a responsive Client-Side Web Application (SPA) designed to simulate a modern real estate platform. Built with React JS, this application allows users to search for properties, view detailed specifications, and manage a "Favorites" list using interactive drag-and-drop functionality.
 
