@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/PrimeHomes/static/css/main.0ba033be.css",
-    "main.js": "/PrimeHomes/static/js/main.1703be61.js",
+    "main.css": "/PrimeHomes/static/css/main.55925be9.css",
+    "main.js": "/PrimeHomes/static/js/main.817cc3e8.js",
     "index.html": "/PrimeHomes/index.html",
-    "main.0ba033be.css.map": "/PrimeHomes/static/css/main.0ba033be.css.map",
-    "main.1703be61.js.map": "/PrimeHomes/static/js/main.1703be61.js.map"
+    "main.55925be9.css.map": "/PrimeHomes/static/css/main.55925be9.css.map",
+    "main.817cc3e8.js.map": "/PrimeHomes/static/js/main.817cc3e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ba033be.css",
-    "static/js/main.1703be61.js"
+    "static/css/main.55925be9.css",
+    "static/js/main.817cc3e8.js"
   ]
 }
