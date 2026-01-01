@@ -90,7 +90,7 @@ To run this project locally on your machine:
     ```bash
     npm start
     ```
-    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Open [Sanara-Perera.github.io/PrimeHomes](https://Sanara-Perera.github.io/PrimeHomes) to view it in the browser.
 
 ---
 
