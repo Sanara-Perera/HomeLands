@@ -28,13 +28,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="f-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
+          
         </div>
 
         <div className="footer-bottom">
