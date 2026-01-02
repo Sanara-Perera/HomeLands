@@ -29,10 +29,10 @@ This project was developed for the **5COSC026W Advanced Client-Side Web Developm
 ## ✨ Key Features
 
 ### 🔍 Advanced Property Search
-Users can filter the JSON dataset of **7 properties** [cite: 66] [cite_start]using multiple simultaneous criteria:
+Users can filter the JSON dataset of **7 properties** using multiple simultaneous criteria:
 * **Type:** House, Flat, or Any.
 * **Price:** Minimum and Maximum price ranges.
-* **Bedrooms:** Minimum and Maximum bedroom counts.
+* **Bedrooms:** Minimum and Maximum bedroom count.
 * **Date Added:** Search by specific dates or date ranges.
 * **Postcode:** Filter by area code (e.g., BR1, NW1).
 * *Powered by React UI Widgets for enhanced consistency and accessibility*.
@@ -90,13 +90,13 @@ To run this project locally on your machine:
     ```bash
     npm start
     ```
-    Open [Sanara-Perera.github.io/PrimeHomes](https://Sanara-Perera.github.io/PrimeHomes) to view it in the browser.
+    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ---
 
 ## 🧪 Testing
 
-[cite_start]This project includes **5 meaningful tests** covering critical logic using the **JEST** framework[cite: 64, 171].
+This project includes **5 meaningful tests** covering critical logic using the **JEST** framework.
 
 To run the test suite:
 ```bash
