@@ -14,10 +14,6 @@ This project was developed for the **5COSC026W Advanced Client-Side Web Developm
 
 ---
 
-## 🔗 Live Demo
-🚀 **[View the Deployed Application Here](INSERT_YOUR_DEPLOYED_URL_HERE)**
-
----
 
 ## 📸 Screenshots
 | Desktop Search | Property Details | Mobile View |
