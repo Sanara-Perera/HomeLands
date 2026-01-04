@@ -1,7 +1,15 @@
+/**
+ * PropertyList.css
+ * Styles for the property search results grid
+ * Responsive grid layout that adapts to screen size
+ */
+
+
 .property-list-container {
   margin-top: 0;
 }
 
+/* Results header section */
 .results-header {
   margin-bottom: 1.5rem;
 }
@@ -19,13 +27,14 @@
   margin: 0;
 }
 
+/* Property grid - 2 columns by default */
 .property-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-
+/* Responsive breakpoints */
 @media (max-width: 1280px) {
   .property-grid {
     grid-template-columns: repeat(2, 1fr);
