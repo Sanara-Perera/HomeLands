@@ -3,10 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#16a34a" />
     
-    
+    <!-- 
+      Content Security Policy (CSP)
+      Security measure to prevent XSS and injection attacks
+      Defines allowed sources for scripts, styles, images, etc.
+      
+      Current policy allows:
+      - Scripts: self, inline, eval (needed for React dev mode)
+      - Styles: self, inline
+      - Images: self, Unsplash CDN, data URIs, blobs
+      - Fonts: self, data URIs
+      - Connections: self only
+      - Frames: self, Google Maps
+    -->
     <meta 
       http-equiv="Content-Security-Policy" 
       content="
@@ -20,6 +34,7 @@
       "
     />
     
+    <!-- SEO meta tags -->
     <meta
       name="description"
       content="PrimeHomes - Find your perfect property. Advanced estate agent web application for searching houses and flats in London."
@@ -27,12 +42,15 @@
     <meta name="keywords" content="estate agent, property search, houses, flats, London, real estate" />
     <meta name="author" content="Your Name" />
     
+    <!-- Apple touch icon for iOS home screen -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- Web app manifest for PWA support -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+    <!-- Page title - displayed in browser tab -->
     <title>PrimeHomes - Estate Agent Application</title>
   </head>
   <body>
+    <!-- Fallback message for users with JavaScript disabled -->
     <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root"></div>
 
