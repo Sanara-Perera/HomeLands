@@ -1,25 +1,45 @@
+/**
+ * PropertyDetails.js
+ * Detailed property page with image gallery, tabs, and contact options
+ * Features:
+ * - Image gallery with thumbnail navigation
+ * - Tabbed content (Description, Floor Plan, Map)
+ * - Favourite toggle
+ * - Contact sidebar with CTA buttons
+ * - Back to search navigation
+ * 
+ * Security: All content rendered via React JSX (automatic XSS protection)
+ */
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Home, Bed, MapPin, Calendar, Heart } from 'lucide-react';
 import './PropertyDetails.css';
 
 function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
   
+  // Image gallery state - tracks which image is currently displayed
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  
+  // Tab state - tracks which tab content is visible
   const [activeTab, setActiveTab] = useState('description');
 
-  
+  // Check if this property is in favourites
   const isFavourited = favourites.some(fav => fav.id === property.id);
 
-  
+  /**
+   * Navigate to next image in gallery
+   * Loops back to first image when reaching the end
+   */
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
       prev === property.images.length - 1 ? 0 : prev + 1
     );
   };
 
-  
+  /**
+   * Navigate to previous image in gallery
+   * Loops to last image when at the beginning
+   */
   const prevImage = () => {
     setCurrentImageIndex((prev) =>
       prev === 0 ? property.images.length - 1 : prev - 1
@@ -27,18 +47,19 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
   };
 
   
+  //Jump to specific image by clicking thumbnail
   const selectImage = (index) => {
     setCurrentImageIndex(index);
   };
 
-  
+  //Toggle favourite status of current property
   const handleFavouriteClick = () => {
     onToggleFavourite(property);
   };
 
   return (
     <div className="property-details-page">
-      
+      {/* Header with back button and property title */}
       <header className="property-details-header">
         <div className="header-content">
           <button onClick={onBack} className="back-button">
@@ -49,7 +70,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
         </div>
       </header>
 
-      
+      {/* Main content grid - property details and sidebar */}
       <div className="property-details-container">
         <div className="property-details-main">
           
@@ -62,7 +83,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
                 className="main-image"
               />
               
-              
+              {/* Previous image button */}
               <button
                 onClick={prevImage}
                 className="gallery-nav-button gallery-nav-prev"
@@ -70,6 +91,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
               >
                 <ChevronLeft className="nav-icon" />
               </button>
+              {/* Next image button */}
               <button
                 onClick={nextImage}
                 className="gallery-nav-button gallery-nav-next"
@@ -78,13 +100,13 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
                 <ChevronRight className="nav-icon" />
               </button>
 
-              
+              {/* Image counter (1 / 8) */}
               <div className="image-counter">
                 {currentImageIndex + 1} / {property.images.length}
               </div>
             </div>
 
-           
+            {/* Thumbnail grid - click to change main image */}
             <div className="thumbnail-gallery">
               {property.images.map((img, idx) => (
                 <img
@@ -98,12 +120,14 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
             </div>
           </div>
 
-          
+          {/* Property Information Card */}
           <div className="property-info-card">
             <div className="property-info-header">
               <h2 className="property-price-large">
                 LKR{property.price.toLocaleString()}
               </h2>
+
+              {/* Favourite button */}
               <button
                 onClick={handleFavouriteClick}
                 className="favourite-button-large"
@@ -116,7 +140,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
               </button>
             </div>
 
-            
+            {/* Property features with icons */}
             <div className="property-features-large">
               <span className="feature-item">
                 <Home className="feature-icon-large" />
@@ -136,8 +160,9 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
               </span>
             </div>
 
-            
+            {/* Tabbed Content Section */}
             <div className="tabs-container">
+              {/* Tab headers */}
               <div className="tabs-header">
                 <button
                   onClick={() => setActiveTab('description')}
@@ -159,8 +184,9 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
                 </button>
               </div>
 
-              
+              {/* Tab content - conditional rendering based on active tab */}
               <div className="tabs-content">
+                {/* Description tab */}
                 {activeTab === 'description' && (
                   <div className="tab-panel">
                     <h3 className="tab-heading">Property Description</h3>
@@ -168,6 +194,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
                   </div>
                 )}
 
+                {/* Floor plan tab */}
                 {activeTab === 'floorplan' && (
                   <div className="tab-panel">
                     <h3 className="tab-heading">Floor Plan</h3>
@@ -179,6 +206,8 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
                   </div>
                 )}
 
+
+                {/* Map tab - placeholder for Google Maps integration */}
                 {activeTab === 'map' && (
                   <div className="tab-panel">
                     <h3 className="tab-heading">Location Map</h3>
@@ -197,11 +226,12 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
           </div>
         </div>
 
-        
+        {/* Sidebar - Contact Card */}
         <aside className="property-details-sidebar">
           <div className="contact-card">
             <h3 className="contact-heading">Contact Agent</h3>
             
+            {/* Call-to-action buttons */}
             <div className="contact-buttons">
               <button className="contact-button contact-button-primary">
                 Request Viewing
@@ -214,6 +244,7 @@ function PropertyDetails({ property, favourites, onToggleFavourite, onBack }) {
               </button>
             </div>
 
+            {/* Property reference and sharing */}
             <div className="property-reference">
               <h4 className="reference-label">Property Reference</h4>
               <p className="reference-value">HL-{property.id.toString().padStart(6, '0')}</p>
