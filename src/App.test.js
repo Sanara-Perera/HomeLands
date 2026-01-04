@@ -1,7 +1,17 @@
+/**
+ * App.test.js
+ * Comprehensive test suite for the PrimeHomes application
+ * Tests search functionality, favourites management, navigation, form handling, and rendering
+ * 
+ * Uses React Testing Library for DOM queries and user interaction simulation
+ * All tests ensure the application behaves correctly from a user's perspective
+ */
+
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import HomeLands from './App';
 
+// Mock property data for testing
 const mockProperties = [
   {
     id: 1,
@@ -27,9 +37,10 @@ const mockProperties = [
   }
 ];
 
-
+/* ========== SEARCH FUNCTIONALITY TESTS ========== */
 describe('Search Functionality Tests', () => {
   
+  // Test 1: Filter properties by type (house)
   test('1. Should filter properties by type (house)', () => {
     render(<HomeLands />);
     
@@ -44,7 +55,8 @@ describe('Search Functionality Tests', () => {
     
     expect(typeSelect.value).toBe('house');
   });
-
+  
+  // Test 2: Filter properties by price range
   test('2. Should filter properties by price range', () => {
     render(<HomeLands />);
     
@@ -64,8 +76,8 @@ describe('Search Functionality Tests', () => {
     expect(maxPriceInput.value).toBe('500000');
   });
 
-  
-  test('4. Should filter properties by postcode area', () => {
+  // Test 3: Filter properties by postcode area
+  test('3. Should filter properties by postcode area', () => {
     render(<HomeLands />);
     
     
@@ -82,10 +94,11 @@ describe('Search Functionality Tests', () => {
 });
 
 
-
+/* ========== FAVOURITES MANAGEMENT TESTS ========== */
 describe('Favourites Management Tests', () => {
   
-  test('6. Should add property to favourites when heart button clicked', () => {
+  // Test 4: Add property to favourites
+  test('4. Should add property to favourites when heart button clicked', () => {
     render(<HomeLands />);
     
     
@@ -96,8 +109,9 @@ describe('Favourites Management Tests', () => {
     const favouritesHeading = screen.getByText(/favourites \(\d+\)/i);
     expect(favouritesHeading).toBeInTheDocument();
   });
-
-  test('7. Should prevent duplicate favourites', () => {
+  
+  // Test 5: Prevent duplicate favourites
+  test('5. Should prevent duplicate favourites', () => {
     render(<HomeLands />);
     
     
@@ -111,8 +125,8 @@ describe('Favourites Management Tests', () => {
   });
 
  
-
-  test('9. Should clear all favourites', () => {
+  // Test 6: Clear all favourites
+  test('6. Should clear all favourites', () => {
     render(<HomeLands />);
     
     
@@ -129,8 +143,9 @@ describe('Favourites Management Tests', () => {
       expect(screen.getByText(/no favourites yet/i)).toBeInTheDocument();
     });
 });
-
-  test('10. Should display favourites count correctly', () => {
+  
+  // Test 7: Display favourites count correctly
+  test('7. Should display favourites count correctly', () => {
     render(<HomeLands />);
     
     
@@ -147,10 +162,11 @@ describe('Favourites Management Tests', () => {
   });
 });
 
-
+/* ========== PROPERTY NAVIGATION TESTS ========== */
 describe('Property Navigation Tests', () => {
   
-  test('11. Should navigate to property details page', () => {
+  // Test 8: Navigate to property details page
+  test('8. Should navigate to property details page', () => {
     render(<HomeLands />);
     
     
@@ -162,8 +178,9 @@ describe('Property Navigation Tests', () => {
       expect(screen.getByText(/back to search/i)).toBeInTheDocument();
     });
   });
-
-  test('12. Should navigate back to search from property page', () => {
+  
+  // Test 9: Navigate back to search from property page
+  test('9. Should navigate back to search from property page', () => {
     render(<HomeLands />);
     
     
@@ -181,10 +198,11 @@ describe('Property Navigation Tests', () => {
   });
 });
 
-
+/* ========== FORM HANDLING TESTS ========== */
 describe('Form Handling Tests', () => {
   
-  test('13. Should accept valid date inputs', () => {
+  // Test 10: Accept valid date inputs
+  test('10. Should accept valid date inputs', () => {
     render(<HomeLands />);
     
     const dateAfterInput = screen.getByLabelText(/date added after/i);
@@ -198,8 +216,8 @@ describe('Form Handling Tests', () => {
   });
 
  
-
-  test('15. Should update search criteria state on input change', () => {
+  // Test 11: Update search criteria state on input change
+  test('11. Should update search criteria state on input change', () => {
     render(<HomeLands />);
     
     const typeSelect = screen.getByLabelText(/property type/i);
@@ -219,11 +237,11 @@ describe('Form Handling Tests', () => {
 });
 
 
+/* ========== COMPONENT RENDERING TESTS ========== */
 describe('Component Rendering Tests', () => {
   
-
-
-  test('17. Should render search form with all input fields', () => {
+  // Test 12: Render search form with all input fields
+  test('12. Should render search form with all input fields', () => {
     render(<HomeLands />);
     
     expect(screen.getByLabelText(/property type/i)).toBeInTheDocument();
@@ -233,13 +251,15 @@ describe('Component Rendering Tests', () => {
     expect(screen.getByLabelText(/max bedrooms/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/postcode area/i)).toBeInTheDocument();
   });
-
-  test('18. Should render favourites sidebar', () => {
+  
+  // Test 13: Render favourites sidebar
+  test('13. Should render favourites sidebar', () => {
     render(<HomeLands />);
     expect(screen.getByText(/favourites \(0\)/i)).toBeInTheDocument();
   });
 
-  test('19. Should render property cards on initial load', () => {
+  // Test 14: Render property cards on initial load
+  test('14. Should render property cards on initial load', () => {
     render(<HomeLands />);
     
     
@@ -249,9 +269,12 @@ describe('Component Rendering Tests', () => {
 
 });
 
+
+/* ========== SEARCH RESULTS DISPLAY TESTS ========== */
 describe('Search Results Display', () => {
   
-  test('21. Should display search results count', () => {
+  // Test 15: Display search results count
+  test('15. Should display search results count', () => {
     render(<HomeLands />);
     
     
