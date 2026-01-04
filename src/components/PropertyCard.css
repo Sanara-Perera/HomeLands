@@ -1,17 +1,27 @@
+/**
+ * PropertyCard.css
+ * Styles for individual property cards in the search results grid
+ * Features: Hover effects, drag-and-drop cursor, responsive images, and compact view
+ */
+
+
+/* Main card container - white background with shadow and hover lift */ 
 .property-card {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s;
-  cursor: move;
+  cursor: move; /* Indicates draggable */
 }
 
+/* Hover effect - lifts card and intensifies shadow */
 .property-card:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
+/* Image container - fixed height with overlay elements */
 .property-card-image-container {
   position: relative;
   width: 100%;
@@ -19,12 +29,14 @@
   overflow: hidden;
 }
 
+/* Property image - covers container while maintaining aspect ratio */
 .property-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Property type badge - overlays on top-left of image */
 .property-type-badge {
   position: absolute;
   top: 0.5rem;
@@ -40,7 +52,7 @@
   pointer-events: none;
 }
 
-
+/* Favourite button - heart icon on top-right */
 .favourite-button {
   position: absolute;
   top: 0.5rem;
@@ -74,10 +86,12 @@
   color: #ef4444;
 }
 
+/* Card content - padding for text and buttons */
 .property-card-content {
   padding: 1rem;
 }
 
+/* Property price - large and bold */
 .property-price {
   font-size: 1.5rem;
   font-weight: bold;
@@ -85,6 +99,7 @@
   margin: 0 0 0.5rem 0;
 }
 
+/* Property description text */
 .property-description {
   color: #4b5563;
   margin: 0 0 0.75rem 0;
@@ -92,6 +107,7 @@
   line-height: 1.5;
 }
 
+/* Features row - icons with text */
 .property-features {
   display: flex;
   flex-wrap: wrap;
@@ -99,6 +115,7 @@
   margin-bottom: 1rem;
 }
 
+/* Individual feature - icon and text */
 .property-feature {
   display: flex;
   align-items: center;
@@ -112,6 +129,7 @@
   height: 1rem;
 }
 
+/* View details button - primary action */
 .view-details-button {
   width: 100%;
   background-color: rgb(0, 48, 120);
@@ -129,7 +147,7 @@
   background-color: rgb(9, 77, 179);
 }
 
-
+/* Compact view - smaller card for favourites sidebar */
 .property-card-compact {
   display: flex;
   gap: 0.75rem;
@@ -147,7 +165,7 @@
 
 .property-card-content-compact {
   flex: 1;
-  min-width: 0;
+  min-width: 0; /* Enables text truncation */
 }
 
 .property-price-compact {
@@ -157,6 +175,7 @@
   font-size: 0.875rem;
 }
 
+/* Description in compact view - single line with ellipsis */
 .property-desc-compact {
   font-size: 0.75rem;
   color: #6b7280;
@@ -166,7 +185,7 @@
   white-space: nowrap;
 }
 
-
+/* Mobile responsiveness */
 @media (max-width: 640px) {
   .property-card-image-container {
     height: 180px;
