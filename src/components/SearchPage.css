@@ -1,3 +1,10 @@
+/**
+ * SearchPage.css
+ * Styles for the main search page layout
+ * Features: Header, two-column layout with sticky sidebar
+ */
+
+/* Page header - branded with logo */
 .search-header {
   background-color: rgb(0, 48, 120);
   color: white;
@@ -17,12 +24,14 @@
   margin: 0 0 0.5rem 0;
 }
 
+/* Logo and title container */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* Site logo image */
 .site-logo {
   width: 60px;
   height: 60px;
@@ -32,7 +41,7 @@
   padding: 4px;
 }
 
-
+/* Mobile logo size */
 @media (max-width: 768px) {
   .site-logo {
     width: 48px;
@@ -44,12 +53,14 @@
   }
 }
 
+/* Tagline under title */
 .site-tagline {
   font-size: 1.125rem;
   color: #bbe0f7;
   margin: 0;
 }
 
+/* Main content container - sidebar layout */
 .search-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -63,18 +74,20 @@
   min-width: 0;
 }
 
+/* Sticky sidebar on desktop */
 .search-sidebar {
   position: sticky;
   top: 2rem;
   align-self: start;
 }
 
-
+/* Responsive - stack vertically on tablet/mobile */
 @media (max-width: 1024px) {
   .search-container {
     grid-template-columns: 1fr;
   }
-
+  
+  /* Sidebar appears above content on mobile */
   .search-sidebar {
     position: relative;
     top: 0;
@@ -86,6 +99,7 @@
   }
 }
 
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .search-header {
     padding: 1.5rem 0;
