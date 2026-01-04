@@ -1,3 +1,12 @@
+/**
+ * PropertyList.js
+ * Displays filtered property search results in a grid
+ * Shows appropriate messaging for empty results
+ * Passes drag-and-drop functionality to property cards
+ * 
+ * Security: All content rendered via React JSX (automatic XSS protection)
+ */
+
 import React from 'react';
 import PropertyCard from './PropertyCard';
 import './PropertyList.css';
@@ -11,7 +20,12 @@ function PropertyList({
   hasSearched 
 }) {
 
-  
+  /**
+   * Generate dynamic heading based on search state
+   * Shows count when search is active, generic heading otherwise
+   * @returns {string} Heading text
+   */
+
   const getHeadingText = () => {
     if (hasSearched && properties.length > 0) {
       return `${properties.length} ${properties.length === 1 ? 'Property' : 'Properties'} Found`;
@@ -24,13 +38,13 @@ function PropertyList({
 
   return (
     <div className="property-list-container">
-   
+      {/* Results header with dynamic count */}
       <div className="results-header">
         <h2 className="results-title">
           {getHeadingText()}
         </h2>
         
-
+        {/* No results message with helpful tips */}
         {hasSearched && properties.length === 0 && (
           <div className="no-results-container">
             <p className="no-results-message">
@@ -49,7 +63,7 @@ function PropertyList({
         )}
       </div>
 
-      
+      {/* Property grid - maps through filtered properties */}
       {properties.length > 0 && (
         <div className="property-grid">
           {properties.map(property => (
@@ -66,7 +80,7 @@ function PropertyList({
         </div>
       )}
 
-      
+      {/* Results summary footer */}
       {properties.length > 0 && (
         <div className="results-footer">
           <p className="results-summary">
