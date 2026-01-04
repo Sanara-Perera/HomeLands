@@ -1,3 +1,10 @@
+/**
+ * SearchForm.css
+ * Styles for the property search form
+ * Features: Grid layout, typing animation, form validation styling
+ */
+
+/* Form container - white card */ 
 .search-form-container {
   background-color: white;
   border-radius: 0.5rem;
@@ -6,11 +13,13 @@
   margin-bottom: 2rem;
 }
 
+/* Hover effect */
 .search-form-container:hover{
     transform: translateY(-2px);
     box-shadow: 0 0 10px rgba(10, 46, 57, 0.5);
 }
 
+/* Form title with icon */
 .search-form-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -21,6 +30,7 @@
   color: #1f2937;
 }
 
+/* Typing animation effect for title */
 .typing-text {
   display: inline-block;
   overflow: hidden;
@@ -43,12 +53,15 @@
   gap: 1.5rem;
 }
 
+/* Form grid - 3 columns on desktop */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
+
+/* Individual form field group */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -62,6 +75,7 @@
   color: #374151;
 }
 
+/* Form inputs - consistent styling */
 .form-control {
   width: 100%;
   padding: 0.5rem;
@@ -72,6 +86,7 @@
   font-family: inherit;
 }
 
+/* Focus state - accessibility requirement */
 .form-control:focus {
   outline: none;
   border-color: #062859;
@@ -83,11 +98,13 @@
 }
 
 
+/* Action buttons container */
 .form-actions {
   display: flex;
   gap: 1rem;
 }
 
+/* Search button - primary action */
 .search-button {
   flex: 2;
   background-color: rgb(0, 48, 120);
@@ -114,6 +131,7 @@
   transform: scale(0.98);
 }
 
+/* Reset button - secondary action */
 .reset-button {
   flex: 1;
   background-color: white;
@@ -142,7 +160,7 @@
   height: 1.25rem;
 }
 
-
+/* Form validation states */
 .form-control:invalid {
   border-color: #ef4444;
 }
@@ -151,15 +169,16 @@
   border-color: #d1d5db;
 }
 
-
+/* Disabled state */
 .form-control:disabled {
   background-color: #f3f4f6;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-
+/* Responsive design */
 @media (max-width: 1024px) {
+  /* Single column on mobile */
   .form-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -189,13 +208,13 @@
   }
 }
 
-
+/* Accessibility - visible focus indicator */
 .form-control:focus-visible {
   outline: 2px solid rgb(0, 48, 120);
   outline-offset: 2px;
 }
 
-
+/* Placeholder styling */
 .form-control::placeholder {
   color: #9ca3af;
   opacity: 1;
@@ -209,12 +228,13 @@
   color: #9ca3af;
 }
 
-
+/* Number input spin buttons */
 .form-control[type="number"]::-webkit-inner-spin-button,
 .form-control[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
+/* Date input styling */
 .form-control[type="date"] {
   appearance: none;
   -webkit-appearance: none;
@@ -229,6 +249,7 @@
   filter: invert(0.3);
 }
 
+/* Typing animation keyframes */
 @keyframes typing {
   from {
     width: 0;
@@ -238,7 +259,7 @@
   }
 }
 
-
+/* Cursor blink animation */
 @keyframes blink {
   0% { border-color: transparent; }
   50% { border-color: #000000; }
