@@ -1,3 +1,10 @@
+/**
+ * FavouritesList.css
+ * Styles for the favourites sidebar component
+ * Includes drag-and-drop interactions, hover effects, and scrollable list
+ */
+
+/* Main container - white card with shadow */
 .favourites-container {
   background-color: white;
   border-radius: 0.5rem;
@@ -5,11 +12,13 @@
   padding: 1rem;
 }
 
+/* Hover effect - lifts card slightly for visual feedback */
 .favourites-container:hover{
     transform: translateY(-2px);
     box-shadow: 0 0 10px rgba(10, 46, 57, 0.5);
 }
 
+/* Header section - title and clear button */
 .favourites-header {
   display: flex;
   align-items: center;
@@ -17,6 +26,7 @@
   margin-bottom: 1rem;
 }
 
+/* Title with icon and count */
 .favourites-title {
   font-size: 1.25rem;
   font-weight: bold;
@@ -27,6 +37,7 @@
   color: #1f2937;
 }
 
+/* Heart icon - default unfilled state */
 .favourites-icon {
   width: 1.25rem;
   height: 1.25rem;
@@ -34,11 +45,13 @@
   fill: none
 }
 
+/* Filled heart icon - when favourites exist */
 .favourites-icon.filled {
   fill: #ef4444;    /* fill red */
   stroke: #ef4444;  /* optional, keep outline same color */
 }
 
+/* Clear all button - subtle hover effect */
 .clear-button {
   background: none;
   border: none;
@@ -58,6 +71,7 @@
   height: 1.25rem;
 }
 
+/* Instructions for drag-and-drop functionality */
 .drop-instructions {
   font-size: 0.75rem;
   color: rgb(0, 48, 120);
@@ -69,12 +83,14 @@
   text-align: center;
 }
 
+/* Scrollable list container - max height with overflow */
 .favourites-list {
   max-height: 500px;
   overflow-y: auto;
   margin-bottom: 0.75rem;
 }
 
+/* Empty state message */
 .no-favourites-message {
   text-align: center;
   color: #9ca3af;
@@ -82,6 +98,7 @@
   font-size: 0.875rem;
 }
 
+/* Individual favourite item - draggable with hover effect */
 .favourite-item {
   display: flex;
   gap: 0.75rem;
@@ -98,14 +115,16 @@
   border-color: rgb(0, 48, 120);
 }
 
+/* Property thumbnail image */
 .favourite-image {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 0.375rem;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevents image from shrinking */
 }
 
+/* Content area - flexible to fill space */
 .favourite-content {
   flex: 1;
   min-width: 0;
@@ -113,6 +132,7 @@
   flex-direction: column;
 }
 
+/* Property price */
 .favourite-price {
   font-weight: 600;
   color: rgb(0, 48, 120);
@@ -120,6 +140,7 @@
   font-size: 0.875rem;
 }
 
+/* Property description */
 .favourite-desc {
   font-size: 0.75rem;
   color: #6b7280;
@@ -127,17 +148,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2; /* Show only 2 lines */
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
+/* Action buttons container */
 .favourite-actions {
   display: flex;
   gap: 0.5rem;
-  margin-top: auto;
+  margin-top: auto; /* Pushes buttons to bottom */
 }
 
+/* View button - primary action */
 .favourite-view-button {
   flex: 1;
   background-color: rgb(0, 48, 120);
@@ -155,6 +178,7 @@
   background-color: rgb(23, 74, 151);
 }
 
+/* Remove button - danger action */
 .favourite-remove-button {
   background-color: #ef4444;
   color: white;
@@ -177,6 +201,7 @@
   height: 1rem;
 }
 
+/* Drop zone for removing favourites via drag-and-drop */
 .remove-drop-zone {
   padding: 0.75rem;
   border: 2px dashed #fca5a5;
@@ -194,6 +219,7 @@
 }
 
 
+/* Custom scrollbar for favourites list */
 .favourites-list::-webkit-scrollbar {
   width: 6px;
 }
