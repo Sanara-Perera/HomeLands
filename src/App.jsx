@@ -1,3 +1,11 @@
+/**
+ * App.jsx
+ * Main application component - acts as the central state manager and router
+ * Handles navigation between search and property details views
+ * Manages favourites state across the entire application
+ * 
+ */
+
 import React, { useState } from 'react';
 import SearchPage from './components/SearchPage';
 import PropertyDetails from './components/PropertyDetails';
@@ -8,12 +16,18 @@ import Footer from './components/Footer';
 
 
 function App() {
-  
+  // View state - controls which page is displayed
   const [view, setView] = useState('search'); 
+  // Currently selected property for detail view
   const [selectedProperty, setSelectedProperty] = useState(null);
   
   
   const [favourites, setFavourites] = useState([]);
+
+  /**
+   * Toggle favourite status of a property
+   * If property is already favourited, remove it; otherwise add it
+   */
 
   const toggleFavourite = (property) => {
   setFavourites(prev =>
@@ -23,18 +37,18 @@ function App() {
   );
 };
 
-
+  //Clear all favourites at once
   const clearFavourites = () => {
     setFavourites([]);
   };
 
-  
+  //Navigate to property details page
   const viewPropertyDetails = (property) => {
     setSelectedProperty(property);
     setView('property');
   };
 
-  
+  //Navigate back to search page from property details
   const backToSearch = () => {
     setView('search');
     setSelectedProperty(null);
@@ -42,7 +56,7 @@ function App() {
 
   return (
     <div className="app">
-      
+      {/* Show search page when view === 'search' */}
       {view === 'search' && (
         <SearchPage
           properties={propertiesData}
@@ -52,7 +66,7 @@ function App() {
           onViewProperty={viewPropertyDetails}
         />
       )}
-
+      {/*Show property details when view === 'property' */}
       {view === 'property' && selectedProperty && (
         <PropertyDetails
           property={selectedProperty}
@@ -61,7 +75,8 @@ function App() {
           onBack={backToSearch}
         />
       )}
-
+      
+      {/* Footer is displayed on all pages */}
       <Footer />
     </div>
   );
