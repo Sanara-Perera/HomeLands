@@ -1,3 +1,12 @@
+/**
+ * Footer.css
+ * Styles for the site-wide footer component
+ * Features: Brand info, social links, contact info, and legal text
+ * Responsive design collapses columns on mobile
+ */
+
+
+/* Main footer container - dark background with white text */ 
 .footer {
   background-color: rgb(0, 48, 120);
   color: white;
@@ -5,11 +14,13 @@
   font-family: sans-serif;
 }
 
+/* Inner container - centers content with max-width */
 .footer-inner {
   max-width: 1280px;
   margin: 0 auto;
 }
 
+/* Top section - flexible layout for brand and links */
 .footer-top {
   display: flex;
   flex-wrap: wrap;
@@ -19,28 +30,33 @@
   margin-bottom: 2rem;
 }
 
+/* Brand section - logo, tagline, and social links */
 .footer-brand {
   flex: 1 1 300px;
   min-width: 250px;
 }
 
+/* Logo text */
 .footer-logo {
   font-size: 1.75rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
+/* Tagline under logo */
 .footer-tagline {
   font-size: 1rem;
   color: #bbe0f7;
   margin-bottom: 1rem;
 }
 
+/* Social media links container */
 .footer-social {
   display: flex;
   gap: 0.5rem;
 }
 
+/* Individual social link buttons */
 .footer-social .social {
   background-color: white;
   color: rgb(0, 48, 120);
@@ -56,6 +72,7 @@
   color: rgb(0, 48, 120);
 }
 
+/* Contact links */
 .footer-contact a {
   display: block;
   margin-top: 0.5rem;
@@ -63,6 +80,7 @@
   text-decoration: none;
 }
 
+/* Footer column - flexible layout for navigation links */
 .f-col {
   flex: 1 1 150px;
   min-width: 120px;
@@ -73,6 +91,7 @@
   font-weight: 600;
 }
 
+/* Reset list styling */
 .f-col ul {
   list-style: none;
   padding: 0;
@@ -83,6 +102,7 @@
   margin-bottom: 0.5rem;
 }
 
+/* Footer links with hover effect */
 .f-col ul li a {
   color: #bbe0f7;
   text-decoration: none;
@@ -93,6 +113,7 @@
   text-decoration: underline;
 }
 
+/* Bottom section - copyright and legal links */
 .footer-bottom {
   display: flex;
   justify-content: center;
@@ -111,6 +132,7 @@
   text-decoration: underline;
 }
 
+/* Mobile responsiveness - stack columns vertically */
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;
