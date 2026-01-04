@@ -1,9 +1,18 @@
+/**
+ * index.css
+ * Global stylesheet - sets up CSS reset, base styles, and common utilities
+ * Applied to entire application before component-specific styles
+ */
+
+
+/* Ensures consistent box-sizing across all elements */ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Sets default font family and background color */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,12 +28,12 @@ code {
     monospace;
 }
 
-
+/* Smooth scrolling for anchor links and scroll-to-top */
 html {
   scroll-behavior: smooth;
 }
 
-
+/* Custom scrollbar styling for webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -43,7 +52,7 @@ html {
   background: #153380;
 }
 
-
+/* Focus styles - accessibility requirement for keyboard navigation */
 button:focus,
 input:focus,
 select:focus,
@@ -52,7 +61,7 @@ textarea:focus {
   outline-offset: 2px;
 }
 
-
+/* Global transition - smooth animations for all interactive elements */
 * {
   transition: all 0.2s ease-in-out;
 }
@@ -72,7 +81,7 @@ img {
   display: block;
 }
 
-
+/* Link styles - inherits color and removes underline by default */
 a {
   color: inherit;
   text-decoration: none;
@@ -82,7 +91,7 @@ a:hover {
   opacity: 0.8;
 }
 
-
+/* Form input consistency - ensures inherited font sizing */
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -91,14 +100,14 @@ select {
   font-size: 100%;
 }
 
-
+/* Container utility class - centered content with max width */
 .container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-
+/* Mobile responsiveness  */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
@@ -116,7 +125,7 @@ select {
   }
 }
 
-
+/* Loading spinner animation - 360 degree rotation */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -127,7 +136,7 @@ select {
   animation: spin 1s linear infinite;
 }
 
-
+/* Fade-in animation - smooth entrance for content */
 @keyframes fadeIn {
   from {
     opacity: 0;
