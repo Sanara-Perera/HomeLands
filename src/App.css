@@ -1,9 +1,16 @@
-.app {
+/**
+ * App.css
+ * Main application stylesheet containing global layout, loading states, and animations
+ * Sets up the base structure for the PrimeHomes estate agent application
+ */
+
+/* Main application container - ensures full viewport height with light background */
+ .app {
   min-height: 100vh;
   background-color: #f9fafb;
 }
 
-
+/* Consistent max-width, centered content across all pages */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -11,6 +18,7 @@
 }
 
 
+/* Loading state - centered spinner with brand color */
 .loading {
   display: flex;
   justify-content: center;
@@ -20,7 +28,7 @@
   color: #1632a3;
 }
 
-
+/* Error container - centered error messages */
 .error {
   padding: 2rem;
   text-align: center;
@@ -36,7 +44,7 @@
   max-width: 600px;
 }
 
-
+/* Fade-in animation - smooth entrance for elements */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -67,7 +75,7 @@
   animation: slideIn 0.3s ease-in-out;
 }
 
-
+/* Responsive design - reduce padding on mobile devices */
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
