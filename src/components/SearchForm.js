@@ -1,9 +1,22 @@
+/**
+ * SearchForm.js
+ * Property search form component with multiple filter options
+ * Features:
+ * - Type, price, bedroom, postcode, and date filters
+ * - Form validation
+ * - Reset functionality
+ * - Accessible form labels and controls
+ * 
+ * Security: All input is sanitized by React before submission
+ * Form submission is handled programmatically (not via HTTP POST)
+ */
+
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import './SearchForm.css';
 
 function SearchForm({ onSearch }) {
-  
+  // Search criteria state - stores all filter values
   const [searchCriteria, setSearchCriteria] = useState({
     type: '',
     minPrice: '',
@@ -15,13 +28,19 @@ function SearchForm({ onSearch }) {
     postcode: ''
   });
 
-  
+  /**
+   * Handle form submission
+   * Prevents page reload and triggers search with current criteria
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(searchCriteria);
   };
 
-  
+  /**
+   * Handle input changes
+   * Updates search criteria state as user types
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSearchCriteria({
@@ -30,7 +49,10 @@ function SearchForm({ onSearch }) {
     });
   };
 
- 
+  /**
+   * Reset all filters to default values
+   * Triggers immediate search with empty criteria
+   */
   const handleReset = () => {
     setSearchCriteria({
       type: '',
@@ -43,6 +65,7 @@ function SearchForm({ onSearch }) {
       postcode: ''
     });
    
+    // Trigger search with empty criteria to show all properties
     onSearch({
       type: '',
       minPrice: '',
@@ -64,7 +87,7 @@ function SearchForm({ onSearch }) {
       
       <form onSubmit={handleSubmit} className="search-form" role="search">
         <div className="form-grid">
-         
+          {/* Property type filter */}
           <div className="form-group">
             <label htmlFor="type" className="form-label">
               Property Type
@@ -83,7 +106,7 @@ function SearchForm({ onSearch }) {
             </select>
           </div>
 
-      
+          {/* Minimum price filter */}
           <div className="form-group">
             <label htmlFor="minPrice" className="form-label">
               Min Price (LKR)
@@ -102,7 +125,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-         
+          {/* Maximum price filter */}
           <div className="form-group">
             <label htmlFor="maxPrice" className="form-label">
               Max Price (LKR)
@@ -121,7 +144,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-          
+          {/* Minimum bedrooms filter */} 
           <div className="form-group">
             <label htmlFor="minBedrooms" className="form-label">
               Min Bedrooms
@@ -140,7 +163,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-          
+          {/* Maximum bedrooms filter */}
           <div className="form-group">
             <label htmlFor="maxBedrooms" className="form-label">
               Max Bedrooms
@@ -159,7 +182,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-       
+          {/* Postcode area filter */}
           <div className="form-group">
             <label htmlFor="postcode" className="form-label">
               Postcode Area
@@ -177,7 +200,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-          
+          {/* Date added after filter */}
           <div className="form-group">
             <label htmlFor="dateAfter" className="form-label">
               Date Added After
@@ -193,7 +216,7 @@ function SearchForm({ onSearch }) {
             />
           </div>
 
-          
+          {/* Date added before filter */}
           <div className="form-group">
             <label htmlFor="dateBefore" className="form-label">
               Date Added Before
@@ -209,7 +232,8 @@ function SearchForm({ onSearch }) {
             />
           </div>
         </div>
-
+        
+        {/* Action buttons */}
         <div className="form-actions">
           <button type="submit" className="search-button">
             <Search className="button-icon" aria-hidden="true" />
