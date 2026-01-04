@@ -1,8 +1,17 @@
+/**
+ * PropertyDetails.css
+ * Comprehensive styles for the property details page
+ * Features: Image gallery with thumbnails, tabbed content, contact sidebar, responsive design
+ */
+
+
+/* Page container - full viewport height */ 
 .property-details-page {
   min-height: 100vh;
   background-color: #f9fafb;
 }
 
+/* Header section - branded background */
 .property-details-header {
   background-color: rgb(0, 48, 120);;
   color: white;
@@ -16,6 +25,7 @@
   padding: 0 1.5rem;
 }
 
+/* Back button */
 .back-button {
   background: none;
   border: none;
@@ -32,6 +42,7 @@
   text-decoration: underline;
 }
 
+/* Property title */
 .property-title {
   font-size: 1.875rem;
   font-weight: bold;
@@ -43,6 +54,7 @@
   margin: 0;
 }
 
+/* Main content grid - sidebar layout */
 .property-details-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -56,13 +68,14 @@
   min-width: 0;
 }
 
+/* Sticky sidebar */
 .property-details-sidebar {
   position: sticky;
   top: 2rem;
   align-self: start;
 }
 
-
+/* ========== IMAGE GALLERY ========== */
 .image-gallery {
   background-color: white;
   border-radius: 0.5rem;
@@ -71,6 +84,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Main image container - large display */
 .main-image-container {
   position: relative;
   width: 100%;
@@ -81,9 +95,11 @@
 .main-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* Shows full image without cropping */
+
 }
 
+/* Navigation buttons on main image */
 .gallery-nav-button {
   position: absolute;
   top: 50%;
@@ -119,6 +135,7 @@
   color: #1f2937;
 }
 
+/* Image counter overlay */
 .image-counter {
   position: absolute;
   bottom: 1rem;
@@ -130,6 +147,7 @@
   font-size: 0.875rem;
 }
 
+/* Thumbnail gallery - grid layout */
 .thumbnail-gallery {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -152,11 +170,13 @@
   opacity: 0.75;
 }
 
+/* Active thumbnail - highlighted border */
 .thumbnail-active {
   border-color: #1645a3;
   opacity: 1;
 }
 
+/* ========== PROPERTY INFO CARD ========== */
 /* Property Info Card */
 .property-info-card {
   background-color: white;
@@ -172,6 +192,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Large price display */
 .property-price-large {
   font-size: 2rem;
   font-weight: bold;
@@ -179,6 +200,7 @@
   margin: 0;
 }
 
+/* Large favourite button */
 .favourite-button-large {
   background-color: #fee2e2;
   border: none;
@@ -208,6 +230,7 @@
   color: #ef4444;
 }
 
+/* Property features row */
 .property-features-large {
   display: flex;
   flex-wrap: wrap;
@@ -229,11 +252,12 @@
   height: 1.25rem;
 }
 
-/* Tabs */
+/* ========== TABBED CONTENT ========== */
 .tabs-container {
   margin-top: 1.5rem;
 }
 
+/* Tab header buttons */
 .tabs-header {
   display: flex;
   border-bottom: 2px solid #e5e7eb;
@@ -257,12 +281,14 @@
   color: #1651a3;
 }
 
+/* Active tab - highlighted with bottom border */
 .tab-active {
   color: #1635a3;
   border-bottom-color: #1635a3;
   font-weight: 600;
 }
 
+/* Tab content with fade-in animation */
 .tab-panel {
   animation: fadeIn 0.3s;
 }
@@ -286,6 +312,7 @@
   border: 1px solid #e5e7eb;
 }
 
+/* Map placeholder - centered content */
 .map-placeholder {
   background-color: #f3f4f6;
   border-radius: 0.5rem;
@@ -318,7 +345,7 @@
   margin: 0;
 }
 
-/* Contact Card */
+/* ========== CONTACT CARD ========== */
 .contact-card {
   background-color: white;
   border-radius: 0.5rem;
@@ -338,6 +365,7 @@
   color: #1f2937;
 }
 
+/* Contact action buttons */
 .contact-buttons {
   display: flex;
   flex-direction: column;
@@ -355,6 +383,7 @@
   transition: all 0.2s;
 }
 
+/* Primary button - call to action */
 .contact-button-primary {
   background-color: rgb(0, 48, 120);
   color: white;
@@ -364,6 +393,7 @@
   background-color: rgb(9, 77, 179);
 }
 
+/* Secondary button - outlined */
 .contact-button-secondary {
   border: 2px solid rgb(0, 48, 120);
   background-color: white;
@@ -374,6 +404,7 @@
   background-color: #f0fdf4;
 }
 
+/* Tertiary button - subtle */
 .contact-button-tertiary {
   border: 2px solid #d1d5db;
   background-color: white;
@@ -384,6 +415,7 @@
   background-color: #f9fafb;
 }
 
+/* Property reference section */
 .property-reference {
   padding-top: 1.5rem;
   border-top: 1px solid #e5e7eb;
@@ -402,6 +434,7 @@
   font-size: 0.875rem;
 }
 
+/* Social share buttons */
 .share-buttons {
   display: flex;
   gap: 0.5rem;
@@ -431,7 +464,7 @@
   background-color: #1da1f2;
 }
 
-/* Responsive */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
   .property-details-container {
     grid-template-columns: 1fr;
